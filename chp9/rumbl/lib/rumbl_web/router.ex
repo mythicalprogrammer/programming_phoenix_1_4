@@ -23,7 +23,8 @@ defmodule RumblWeb.Router do
   end
 
   scope "/manage", RumblWeb do
-    pipe_through [:browser, :authenticate_user]
+    # the authenticate_user is in 'plug RumblWeb.Auth'
+    pipe_through [:browser, :authenticate_user] 
 
     resources "/videos", VideoController
   end
